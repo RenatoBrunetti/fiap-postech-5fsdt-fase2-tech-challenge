@@ -1,0 +1,59 @@
+{
+  "name": "fiap-postech-5fsdt-fase2-tech-challenge",
+  "version": "1.0.0",
+  "description": "FIAP Postech 5FSDT Fase 2 Tech Challenge",
+  "keywords": [],
+  "contributors": [
+    {
+      "name": "Eduarda Campos Aragão",
+      "email": "rm365002@fiap.com.br",
+      "url": "",
+      "rm": "365002"
+    },
+    {
+      "name": "Esdras Correa",
+      "email": "rm361922@fiap.com.br",
+      "url": "https://github.com/EsdrasCorrea",
+      "rm": "361922"
+    },
+    {
+      "name": "Rafael Luacianetti Oliveira",
+      "email": "rm361704@fiap.com.br",
+      "url": "https://github.com/RafaelLOliveira",
+      "rm": "361704"
+    },
+    {
+      "name": "Renato Brunetti",
+      "email": "rm362132@fiap.com.br",
+      "url": "https://github.com/RenatoBrunetti",
+      "rm": "362132"
+    }
+  ],
+  "license": "ISC",
+  "main": "index.js",
+  "scripts": {
+    "start:dev": "tsx watch src/server.ts",
+    "start": "node build/server.js",
+    "build": "tsup src --out-dir build",
+    "lint": "eslint .",
+    "lint-fix": "eslint . --fix"
+  },
+  "devDependencies": {
+    "@eslint/js": "9.30.1",
+    "@types/node": "24.0.10",
+    "eslint": "9.30.1",
+    "eslint-config-prettier": "10.1.5",
+    "eslint-plugin-prettier": "5.5.1",
+    "globals": "16.3.0",
+    "prettier": "3.6.2",
+    "tsup": "8.5.0",
+    "tsx": "4.20.3",
+    "typescript": "5.8.3",
+    "typescript-eslint": "8.35.1"
+  },
+  "dependencies": {
+    "dotenv": "17.0.1",
+    "fastify": "5.4.0",
+    "zod": "3.25.74"
+  }
+}

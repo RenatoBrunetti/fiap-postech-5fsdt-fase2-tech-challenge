@@ -1,0 +1,9 @@
+# Node.js
+node_modules
+build
+
+# Environments
+.env
+
+# Database
+data
