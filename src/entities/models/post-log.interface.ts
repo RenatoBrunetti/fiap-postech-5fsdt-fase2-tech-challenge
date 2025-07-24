@@ -1,3 +1,6 @@
+import { IPost } from './post.interface';
+import { IUser } from './user.interface';
+
 export interface IPostLog {
   id: string;
   action: string;
@@ -6,4 +9,7 @@ export interface IPostLog {
 
   post_id: string;
   user_id: string;
+
+  post?: IPost;
+  user?: IUser;
 }

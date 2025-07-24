@@ -2,6 +2,12 @@ import { DataSource } from 'typeorm';
 
 import { env } from '@/env';
 
+// Entities
+import { Post } from '@/entities/post.entity';
+import { PostLog } from '@/entities/post-log.entity';
+import { Role } from '@/entities/role.entity';
+import { User } from '@/entities/user.entity';
+
 export const appDataSource = new DataSource({
   type: 'postgres',
   host: env.DATABASE_HOST,
@@ -11,7 +17,7 @@ export const appDataSource = new DataSource({
   database: env.DATABASE_NAME,
   // synchronize: true,
   logging: env.NODE_ENV === 'development',
-  entities: [],
+  entities: [Post, PostLog, Role, User],
   // migrations: [],
   // subscribers: [],
 });

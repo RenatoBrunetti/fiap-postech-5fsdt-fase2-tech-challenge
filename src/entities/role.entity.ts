@@ -2,12 +2,14 @@ import {
   Column,
   CreateDateColumn,
   Entity,
+  OneToMany,
   PrimaryGeneratedColumn,
   UpdateDateColumn,
 } from 'typeorm';
 
 import { IRole } from './models/role.interface';
 import { User } from './user.entity';
+import { IUser } from './models/user.interface';
 
 @Entity('role')
 export class Role implements IRole {
@@ -35,5 +37,19 @@ export class Role implements IRole {
 
   // One Role to many Users
   @OneToMany(() => User, (user) => user.role)
-  users: User[];
+  users?: IUser[] | undefined;
+
+  constructor(
+    id: string,
+    name: string,
+    description: string,
+    created_at: Date,
+    updated_at: Date,
+  ) {
+    this.id = id;
+    this.name = name;
+    this.description = description;
+    this.created_at = created_at;
+    this.updated_at = updated_at;
+  }
 }

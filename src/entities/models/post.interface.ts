@@ -1,3 +1,6 @@
+import { IPostLog } from './post-log.interface';
+import { IUser } from './user.interface';
+
 export interface IPost {
   id: string;
   title: string;
@@ -7,4 +10,7 @@ export interface IPost {
   updated_at: Date;
 
   user_id: string;
+
+  user?: IUser;
+  postLogs?: IPostLog[];
 }
