@@ -1,0 +1,25 @@
+services:
+  postgres:
+    image: postgres:latest
+    container_name: postgres
+    restart: always
+    shm_size: 128mb
+    environment:
+      POSTGRES_USER: blog
+      POSTGRES_PASSWORD: secret
+      POSTGRES_DB: blog
+    ports:
+      - 5432:5432
+    volumes:
+      - ./data:/var/lib/postgresql/data
+      - ./scripts/db/init.sql:/docker-entrypoint-initdb.d/init.sql
+    networks:
+      - blog
+
+volumes:
+  blog:
+    driver: local
+
+networks:
+  blog:
+    external: false

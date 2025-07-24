@@ -3,8 +3,16 @@ import 'dotenv/config';
 import { z } from 'zod';
 
 const envSchema = z.object({
-  ENV: z.enum(['development', 'production', 'test']).default('development'),
+  NODE_ENV: z
+    .enum(['development', 'production', 'test'])
+    .default('development'),
   PORT: z.coerce.number().default(3000),
+  // Database configuration
+  DATABASE_USER: z.string(),
+  DATABASE_HOST: z.string(),
+  DATABASE_NAME: z.string(),
+  DATABASE_PASSWORD: z.string(),
+  DATABASE_PORT: z.coerce.number(),
 });
 
 const envParse = envSchema.safeParse(process.env);
