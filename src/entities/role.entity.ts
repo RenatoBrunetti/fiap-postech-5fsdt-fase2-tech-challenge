@@ -1,28 +1,39 @@
-import { Column, Entity, PrimaryGeneratedColumn } from 'typeorm';
+import {
+  Column,
+  CreateDateColumn,
+  Entity,
+  PrimaryGeneratedColumn,
+  UpdateDateColumn,
+} from 'typeorm';
 
 import { IRole } from './models/role.interface';
+import { User } from './user.entity';
 
-@Entity({ name: 'role' })
+@Entity('role')
 export class Role implements IRole {
-  @PrimaryGeneratedColumn('uuid', { name: 'id' })
+  @PrimaryGeneratedColumn('uuid')
   id: string;
 
-  @Column({ name: 'name', type: 'varchar', length: 255 })
+  @Column({ type: 'varchar' })
   name: string;
 
-  @Column({ name: 'description', type: 'varchar', length: 255, nullable: true })
+  @Column({ type: 'varchar', nullable: true })
   description?: string;
 
   @CreateDateColumn({
-    name: 'created_at',
     type: 'timestamp without time zone',
     default: () => 'CURRENT_TIMESTAMP',
   })
   created_at: Date;
 
   @UpdateDateColumn({
-    name: 'updated_at',
     type: 'timestamp without time zone',
     default: () => 'CURRENT_TIMESTAMP',
+    onUpdate: 'CURRENT_TIMESTAMP',
   })
+  updated_at: Date;
+
+  // One Role to many Users
+  @OneToMany(() => User, (user) => user.role)
+  users: User[];
 }
