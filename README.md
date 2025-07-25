@@ -30,3 +30,9 @@
 ## Docker
 
 ![Docker Desktop executanto Banco de Dados!](/assets/images/docker-desktop.png 'Docker Desktop executanto Banco de Dados') _"Docker Desktop executanto Banco de Dados"_
+
+## Rotas HTTP
+
+### Role
+
+- `GET` Find All Roles `/role`
