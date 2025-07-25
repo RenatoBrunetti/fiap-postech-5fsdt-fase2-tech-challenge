@@ -14,6 +14,8 @@
 
 3. Executar o comando `npm i` ou `npm install` para instalar as dependências do projeto na pasta `node_modules` na raiz do projeto.
 
+4. Executar o comando `npm run start:dev` para executar a aplicação.
+
 ## Banco de Dados
 
 ![Diagrama do banco de dados!](/assets/images/db-diagram.png 'Diagrama do banco de dados') _"Diagrama do banco de dados"_
@@ -24,3 +26,7 @@
 - `user`: Responsável por armazenar os usuários cadastrados.
 - `post`: Responsável por armazenar as postagens cadastradas.
 - `post_log`: Responsável por armazenar os logs de manipulação das postagens.
+
+## Docker
+
+![Docker Desktop executanto Banco de Dados!](/assets/images/docker-desktop.png 'Docker Desktop executanto Banco de Dados') _"Docker Desktop executanto Banco de Dados"_
