@@ -16,6 +16,10 @@
 
 4. Executar o comando `npm run start:dev` para executar a aplicação.
 
+## Arquitetura
+
+![Diagrama básico de arquitetura!](/assets/images/arch-app-diagram.png 'Diagrama básico de arquitetura') _"Diagrama básico de arquitetura"_
+
 ## Banco de Dados
 
 ![Diagrama do banco de dados!](/assets/images/db-diagram.png 'Diagrama do banco de dados') _"Diagrama do banco de dados"_
@@ -30,3 +34,10 @@
 ## Docker
 
 ![Docker Desktop executanto Banco de Dados!](/assets/images/docker-desktop.png 'Docker Desktop executanto Banco de Dados') _"Docker Desktop executanto Banco de Dados"_
+
+## Rotas HTTP
+
+### User
+
+- `GET` Find All Users `/user`
+- `POST` Create User `/user`

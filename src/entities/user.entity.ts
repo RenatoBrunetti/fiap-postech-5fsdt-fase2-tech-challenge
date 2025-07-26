@@ -17,7 +17,7 @@ import { Post } from './post.entity';
 import { PostLog } from './post-log.entity';
 import { Role } from './role.entity';
 
-@Entity('users')
+@Entity('user')
 export class User implements IUser {
   @PrimaryGeneratedColumn('uuid')
   id: string;
