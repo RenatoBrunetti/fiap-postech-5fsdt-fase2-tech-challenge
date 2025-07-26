@@ -1,5 +1,12 @@
 # FIAP Postech 5FSDT Fase2 Tech Challenge
 
+Alunos:
+
+- Eduarda Campos Aragão / RM365002
+- Esdras Correa / RM361922
+- Rafael Luacianetti Oliveira / RM361704
+- Renato Brunetti / RM362132
+
 ## Requisitos para executar o projeto
 
 - Instalar o Docker
@@ -37,7 +44,12 @@
 
 ## Rotas HTTP
 
+
 ### User
 
 - `GET` Find All Users `/user`
 - `POST` Create User `/user`
+
+### Role
+
+- `GET` Find All Roles `/role`
