@@ -7,7 +7,7 @@ import '@/lib/typeorm/typeorm';
 
 import { userRoutes } from '@/http/controllers/user/routes';
 import { roleRoutes } from './http/controllers/role/routes';
-
+import { postRoutes } from './http/controllers/post/routes';
 
 // Export Fastify App instance
 export const app = fastify();
@@ -16,4 +16,4 @@ export const app = fastify();
 
 app.register(userRoutes);
 app.register(roleRoutes);
-
+app.register(postRoutes);
