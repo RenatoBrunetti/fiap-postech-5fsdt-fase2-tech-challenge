@@ -53,7 +53,7 @@ Alunos:
 - `GET` Find All Posts `/post`
 - `POST` Create Post `/post`
 
-### Post
+### Post Log
 
 - `GET` Find All PostLogs `/post-log`
 
