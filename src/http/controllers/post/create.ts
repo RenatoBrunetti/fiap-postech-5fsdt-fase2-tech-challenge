@@ -15,7 +15,7 @@ export async function create(request: FastifyRequest, reply: FastifyReply) {
   const createPostUseCase = makeCreatePostUseCase();
   const post = await createPostUseCase.handler({ title, content, user_id });
 
-  // Create the PostLog instance
+  // Create a PostLog instance
   if (post && post.id) {
     const createPostLogUseCase = makeCreatePostLogUseCase();
     await createPostLogUseCase.handler({

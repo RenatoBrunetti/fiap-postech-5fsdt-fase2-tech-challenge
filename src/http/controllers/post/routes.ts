@@ -7,9 +7,9 @@ import { updatePost } from './update';
 import { deletePost } from './delete';
 
 export async function postRoutes(app: FastifyInstance) {
-  app.post('/post', create);
-  app.get('/post', findAllPosts);
-  app.get('/post/:id', findPost);
-  app.put('/post/:id', updatePost);
-  app.delete('/post/:id', deletePost);
+  app.post('/posts', create);
+  app.get('/posts', findAllPosts);
+  app.get('/posts/:id', findPost);
+  app.put('/posts/:id', updatePost);
+  app.delete('/posts/:id', deletePost);
 }

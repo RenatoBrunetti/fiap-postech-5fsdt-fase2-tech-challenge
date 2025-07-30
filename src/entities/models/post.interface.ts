@@ -3,8 +3,8 @@ import { IUser } from './user.interface';
 
 export interface IPost {
   id?: string;
-  title: string;
-  content: string;
+  title?: string;
+  content?: string;
   active?: boolean;
   created_at?: Date;
   updated_at?: Date;

@@ -50,11 +50,11 @@ Alunos:
 
 ### Post
 
-- `DELETE` Delete Post `/post`
-- `GET` Find All Posts `/post`
-- `GET` Find Post `/post`
-- `POST` Create Post `/post`
-- `PUT` Update Post `/post`
+- `DELETE` Delete Post `/posts`
+- `GET` Find All Posts `/posts`
+- `GET` Find Post `/posts`
+- `POST` Create Post `/posts`
+- `PUT` Update Post `/posts`
 
 ### Post Log
 
