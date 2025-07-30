@@ -14,16 +14,13 @@ import { User } from './user.entity';
 import { IUser } from './models/user.interface';
 import { IPost } from './models/post.interface';
 
-@Entity('post_logs')
+@Entity('post_log')
 export class PostLog implements IPostLog {
   @PrimaryGeneratedColumn('uuid')
   id: string;
 
   @Column({ type: 'varchar', nullable: false })
   action: string;
-
-  @Column({ type: 'text', nullable: true })
-  description: string;
 
   @CreateDateColumn({
     type: 'timestamp without time zone',
@@ -41,7 +38,7 @@ export class PostLog implements IPostLog {
   @Column({ type: 'uuid', nullable: false })
   post_id: string;
 
-  @Column({ type: 'uuid', nullable: true })
+  @Column({ type: 'uuid', nullable: false })
   user_id: string;
 
   // One Post to many PostLogs
@@ -54,7 +51,7 @@ export class PostLog implements IPostLog {
 
   // One User to many PostLogs
   @ManyToOne(() => User, (user) => user.postLogs, {
-    nullable: true,
+    nullable: false,
     onDelete: 'SET NULL',
   })
   @JoinColumn({ name: 'user_id' })
@@ -63,7 +60,6 @@ export class PostLog implements IPostLog {
   constructor(
     id: string,
     action: string,
-    description: string,
     created_at: Date,
     updated_at: Date,
     post_id: string,
@@ -73,7 +69,6 @@ export class PostLog implements IPostLog {
   ) {
     this.id = id;
     this.action = action;
-    this.description = description;
     this.created_at = created_at;
     this.updated_at = updated_at;
     this.post_id = post_id;

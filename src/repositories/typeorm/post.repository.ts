@@ -17,6 +17,14 @@ export class PostRepository implements IPostRepository {
   }
 
   async findAll(): Promise<IPost[]> {
-    return this.repository.find();
+    return this.repository.find({
+      where: { active: true },
+      relations: ['user'],
+      select: {
+        user: {
+          username: true,
+        },
+      },
+    });
   }
 }

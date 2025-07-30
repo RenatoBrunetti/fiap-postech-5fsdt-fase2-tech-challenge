@@ -13,7 +13,7 @@ export class UserRepository implements IUserRepository {
   }
 
   async findAll(): Promise<IUser[]> {
-    return this.repository.find();
+    return this.repository.find({ where: { active: true } });
   }
 
   async create(user: IUser): Promise<IUser> {

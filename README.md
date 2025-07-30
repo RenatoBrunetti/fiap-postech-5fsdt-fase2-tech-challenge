@@ -44,12 +44,20 @@ Alunos:
 
 ## Rotas HTTP
 
+### Role
+
+- `GET` Find All Roles `/role`
+
+### Post
+
+- `GET` Find All Posts `/post`
+- `POST` Create Post `/post`
+
+### Post Log
+
+- `GET` Find All PostLogs `/post-log`
 
 ### User
 
 - `GET` Find All Users `/user`
 - `POST` Create User `/user`
-
-### Role
-
-- `GET` Find All Roles `/role`
