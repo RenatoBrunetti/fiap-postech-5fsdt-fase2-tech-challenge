@@ -1,4 +1,4 @@
-import { Repository } from 'typeorm';
+import { ILike, Repository } from 'typeorm';
 
 import { IPost } from '@/entities/models/post.interface';
 import { Post } from '@/entities/post.entity';
@@ -31,6 +31,27 @@ export class PostRepository implements IPostRepository {
   async findById(id: string): Promise<IPost | null> {
     return this.repository.findOne({
       where: { id },
+      relations: ['user'],
+      select: {
+        user: {
+          username: true,
+        },
+      },
+    });
+  }
+
+  async findBySearch(search: string): Promise<IPost[]> {
+    return this.repository.find({
+      where: [
+        { title: ILike(`%${search}%`), active: true },
+        { content: ILike(`%${search}%`), active: true },
+      ],
+      relations: ['user'],
+      select: {
+        user: {
+          username: true,
+        },
+      },
     });
   }
 
