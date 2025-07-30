@@ -27,4 +27,18 @@ export class PostRepository implements IPostRepository {
       },
     });
   }
+
+  async findById(id: string): Promise<IPost | null> {
+    return this.repository.findOne({
+      where: { id },
+    });
+  }
+
+  async update(post: IPost): Promise<IPost> {
+    return this.repository.save(post);
+  }
+
+  async delete(id: string): Promise<void> {
+    await this.repository.delete(id);
+  }
 }
