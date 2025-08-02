@@ -1,0 +1,60 @@
+name: CI Pipeline
+
+on:
+  push:
+    branches:
+      - main
+  pull_request:
+    branches:
+      - main
+
+jobs:
+  docker-build:
+    runs-on: ubuntu-latest
+
+    env:
+      DOCKER_USERNAME: ${{ secrets.DOCKER_USERNAME }}
+      DOCKER_PASSWORD: ${{ secrets.DOCKER_PASSWORD }}
+
+    steps:
+      - name: Checkout Repository
+        uses: actions/checkout@v4
+
+      - name: Build and Push Docker Image
+        run: |
+          docker login -u $DOCKER_USERNAME -p $DOCKER_PASSWORD
+          docker build -t $DOCKER_USERNAME/challenge:latest \
+            --build-arg="PORT=${{ secrets.PORT }}" \
+            --build-arg="NODE_ENV=${{ secrets.NODE_ENV }}" \
+            --build-arg="DATABASE_USER=${{ secrets.DATABASE_USER }}" \
+            --build-arg="DATABASE_HOST=${{ secrets.DATABASE_HOST }}" \
+            --build-arg="DATABASE_NAME=${{ secrets.DATABASE_NAME }}" \
+            --build-arg="DATABASE_PASSWORD=${{ secrets.DATABASE_PASSWORD }}" \
+            --build-arg="DATABASE_PORT=${{ secrets.DATABASE_PORT }}" .
+          docker push $DOCKER_USERNAME/challenge:latest
+
+  node-build:
+    runs-on: ubuntu-latest
+
+    strategy:
+      matrix:
+        node-version: [22.x]
+
+    steps:
+      - name: Checkout Repository
+        uses: actions/checkout@v4
+
+      - name: Setup Node.js ${{ matrix.node-version }}
+        uses: actions/setup-node@v4
+        with:
+          node-version: ${{ matrix.node-version }}
+          cache: 'npm'
+
+      - name: Install Dependencies
+        run: npm install
+
+      - name: Run Linter
+        run: npm run lint
+
+      - name: Run Tests
+        run: npm test
