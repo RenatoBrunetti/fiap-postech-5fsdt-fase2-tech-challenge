@@ -1,4 +1,4 @@
-# FIAP Postech 5FSDT Fase2 Tech Challenge
+# FIAP Postech 5FSDT Fase2 Tech Challenge - Blog API
 
 Alunos:
 
@@ -7,29 +7,97 @@ Alunos:
 - Rafael Lucianetti Oliveira / RM361704
 - Renato Brunetti / RM362132
 
-## Requisitos para executar o projeto
+## Executar o projeto localmente
 
-- Instalar o Docker
-- Instalar o Docker Compose
-- Instalar o Node.js
+### Requisitos
 
-## Passo-a-passo para iniciar o projeto
+1. Instalar o Docker
+2. Instalar o Docker Compose
+3. Instalar o Node.js
+4. Adicionar um arquivo `.env` na raiz do projeto com todas as variáveis de ambiente cadastradas, e que podem ser encontradas no arquivo `.env.example`.
+5. Executar o comando `npm i` ou `npm install` para instalar as dependências do projeto na pasta `node_modules` na raiz do projeto.
 
-1. Adicionar um arquivo `.env` na raiz do projeto com todas as variáveis de ambiente cadastradas também no arquivo `.env.example`.
+### Executar em modo desenvolvimento
 
-2. Executar o comando `docker compose up -d` para criar o banco de dados e as tabelas com o **Docker Compose**. O banco será persistido e as informações salvas na pasta `data` na raiz do projeto.
+1. Executar o comando `docker compose up -d database`, que através do **Docker Compose**, irá criar e executar o banco de dados com as tabelas inicialmente cadastradas. Dessa forma, O banco de dados e suas informações serão persistidas e salvas na pasta `data`, na raiz do projeto.
 
-3. Executar o comando `npm i` ou `npm install` para instalar as dependências do projeto na pasta `node_modules` na raiz do projeto.
+2. Executar o comando `npm run start:dev` para executar a aplicação.
 
-4. Executar o comando `npm run start:dev` para executar a aplicação.
+### Executar em modo teste/produção
 
-## Arquitetura
+1. Executar o comando `docker compose up -d`, que através do **Docker Compose**, irá criar e executar o banco de dados com as tabelas inicialmente cadastradas e também executar a aplicação **Node.js** que ficará disponível através da porta cadastrada no arquivo `.env`. Dessa forma, o banco de dados e suas informações serão persistidas e salvas na pasta `data` na raiz do projeto.
+
+## Informações Técnicas
+
+### Arquitetura
 
 ![Diagrama básico de arquitetura!](/assets/images/arch-app-diagram.png 'Diagrama básico de arquitetura') _"Diagrama básico de arquitetura"_
+
+A arquitetura utilizada no projeto foi baseada na **Arquitetura Limpa** ou **Clean Architecture**, onde:
+
+- As requisições HTTP são recebidas através das **Rotas da API** que implementam os **Controladores** de acordo com os métodos HTTP e a o caminho da URL.
+- Os **Controladores** implementam as **Fábricas** dos **Casos de Usos** de acordo com o que é recebido através das requisções das **Rotas da API**.
+- Os **Casos de Usos** implementam individualmente cada um dos métodos dos **Repositórios**.
+- Os **Repositórios** implementam os métodos que interagem com o banco de dados através das **Bibliotecas** de acordo com os modelos das **Entidades**.
+- Os **Drivers** dos bancos de dados e ou o **ORM** são executados através dos repositórios para intermediar as consultas aos bancos de dados.
+- As **Entidades** são as representações das tabelas do banco de dados com todos os detalhes.
+
+### Tecnologias Utilizadas
+
+<details>
+  <summary>Node.js</summary>
+  Um ambiente de execução JavaScript assíncrono e baseado em eventos. Ele permite a construção de aplicações de rede escaláveis e de alta performance, sendo a base para o desenvolvimento do back-end da API.
+</details>
+<details>
+  <summary>TypeScript</summary>
+  Uma superset do JavaScript que adiciona tipagem estática opcional. Ele melhora a manutenibilidade, a legibilidade e a confiabilidade do código, detectando erros de forma antecipada e facilitando o desenvolvimento em equipe.
+</details>
+<details>
+  <summary>Fastify</summary>
+  Um framework web focado em alta performance e baixa sobrecarga para Node.js. Ele é otimizado para lidar com um grande volume de requisições por segundo, oferecendo uma experiência de desenvolvimento simples e eficiente para a criação de rotas, plugins e middlewares da API.
+</details>
+<details>
+  <summary>SQL</summary>
+  A linguagem padrão para gerenciamento e manipulação de bancos de dados relacionais. É usada em conjunto com o PostgreSQL para criar, consultar, atualizar e excluir dados, garantindo a integridade e a estrutura das tabelas.
+</details>
+<details>
+  <summary>PostgreSQL</summary>
+  Um poderoso sistema de banco de dados relacional de código aberto, conhecido por sua robustez, confiabilidade e conformidade com padrões SQL. Ele é usado para armazenar e gerenciar os dados da aplicação de forma segura e consistente.
+</details>
+<details>
+  <summary>TypeORM</summary>
+  Um Object-Relational Mapper (ORM) para Node.js e TypeScript. Ele permite mapear as classes de entidade da aplicação para as tabelas do banco de dados, simplificando a interação com o PostgreSQL e mantendo a lógica de negócio desacoplada dos comandos SQL brutos.
+</details>
+<details>
+  <summary>Jest</summary>
+  Um framework de testes em JavaScript, com foco em simplicidade. Ele é usado para escrever e executar testes unitários e de integração, garantindo que o código da aplicação funcione conforme o esperado e que novas funcionalidades não quebrem as existentes (testes de regressão).
+</details>
+<details>
+  <summary>GitHub Actions</summary>
+  Uma ferramenta de integração e entrega contínua (CI/CD) do GitHub. Ela automatiza o fluxo de trabalho de desenvolvimento, como a execução de testes, a validação de código e o deploy da aplicação, garantindo um processo de entrega contínua e segura.
+</details>
+<details>
+  <summary>Docker</summary>
+  Uma plataforma de contêinerização que permite empacotar a aplicação e suas dependências em um ambiente isolado. Isso garante que a API funcione de maneira consistente em qualquer ambiente, do desenvolvimento à produção, eliminando problemas de compatibilidade.
+</details>
+<details>
+  <summary>Docker Compose</summary>
+  Uma ferramenta para definir e gerenciar aplicações multi-contêiner do Docker. Ela simplifica a orquestração do ambiente de desenvolvimento da API, permitindo que todos os serviços (como o Node.js e o PostgreSQL) sejam iniciados e conectados com um único comando.
+</details>
+<details>
+  <summary>ESLint</summary>
+  Uma ferramenta de análise estática de código para identificar e reportar problemas no código JavaScript/TypeScript. Ela ajuda a manter um padrão de codificação consistente, evitar erros comuns e melhorar a qualidade geral do código.
+</details>
+<details>
+  <summary>Prettier</summary>
+  Um formatador de código que garante que todo o código-fonte da aplicação seja formatado de forma consistente. Ele elimina discussões sobre estilos de código, promovendo um ambiente de desenvolvimento mais colaborativo e focado na lógica de negócio.
+</details>
 
 ## Banco de Dados
 
 ![Diagrama do banco de dados!](/assets/images/db-diagram.png 'Diagrama do banco de dados') _"Diagrama do banco de dados"_
+
+O banco de dados relacional utilizado na aplicação é o **PostgreSQL**.
 
 ### Tabelas:
 
@@ -40,7 +108,15 @@ Alunos:
 
 ## Docker
 
-![Docker Desktop executanto Banco de Dados!](/assets/images/docker-desktop.png 'Docker Desktop executanto Banco de Dados') _"Docker Desktop executanto Banco de Dados"_
+![Docker Desktop executanto o serviço de Banco de Dados!](/assets/images/docker-desktop-database.png 'Docker Desktop executanto o serviço de Banco de Dados') _"Docker Desktop executanto o serviço de Banco de Dados"_
+
+Comando utilizado: `docker compose up -d database`
+
+---
+
+![Docker Desktop executanto os serviços de Banco de Dados e API!](/assets/images/docker-desktop-full.png 'Docker Desktop executanto os serviços de Banco de Dados e API') _"Docker Desktop executanto os serviços de Banco de Dados e API"_
+
+Comando utilizado: `docker compose up -d`
 
 ## Rotas HTTP
 
