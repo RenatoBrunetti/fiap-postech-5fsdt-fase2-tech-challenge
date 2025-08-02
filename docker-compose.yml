@@ -1,25 +1,42 @@
 services:
-  postgres:
+  api:
+    build: .
+    container_name: api
+    restart: unless-stopped
+    ports:
+      - '${PORT}:${PORT}'
+    env_file: ./.env
+    environment:
+      - PORT=${PORT}
+      - NODE_ENV=${NODE_ENV}
+      - DATABASE_USER=${DATABASE_USER}
+      - DATABASE_HOST=database
+      - DATABASE_NAME=${DATABASE_NAME}
+      - DATABASE_PASSWORD=${DATABASE_PASSWORD}
+      - DATABASE_PORT=${DATABASE_PORT}
+    stdin_open: true
+    tty: true
+    depends_on:
+      - database
+    volumes:
+      - .:/app
+      - /app/node_modules
+
+  database:
     image: postgres:latest
-    container_name: postgres
+    container_name: database
     restart: always
     shm_size: 128mb
+    env_file: ./.env
     environment:
-      POSTGRES_USER: blog
-      POSTGRES_PASSWORD: secret
-      POSTGRES_DB: blog
+      - POSTGRES_USER=${DATABASE_USER}
+      - POSTGRES_PASSWORD=${DATABASE_PASSWORD}
+      - POSTGRES_DB=${DATABASE_NAME}
     ports:
       - 5432:5432
     volumes:
       - ./data:/var/lib/postgresql/data
       - ./scripts/db/init.sql:/docker-entrypoint-initdb.d/init.sql
-    networks:
-      - blog
 
 volumes:
-  blog:
-    driver: local
-
-networks:
-  blog:
-    external: false
+  data:
