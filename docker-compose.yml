@@ -2,7 +2,6 @@ services:
   api:
     build: .
     container_name: api
-    restart: unless-stopped
     ports:
       - '${PORT}:${PORT}'
     env_file: ./.env
@@ -15,12 +14,10 @@ services:
       - DATABASE_PASSWORD=${DATABASE_PASSWORD}
       - DATABASE_PORT=${DATABASE_PORT}
     stdin_open: true
-    tty: true
     depends_on:
       - database
-    volumes:
-      - .:/app
-      - /app/node_modules
+    networks:
+      - challenge
 
   database:
     image: postgres:latest
@@ -33,10 +30,52 @@ services:
       - POSTGRES_PASSWORD=${DATABASE_PASSWORD}
       - POSTGRES_DB=${DATABASE_NAME}
     ports:
-      - 5432:5432
+      - ${DATABASE_PORT}:5432
     volumes:
-      - ./data:/var/lib/postgresql/data
+      - ./data/postgresql:/var/lib/postgresql/data
       - ./scripts/db/init.sql:/docker-entrypoint-initdb.d/init.sql
+    networks:
+      - challenge
+
+  prometheus:
+    image: prom/prometheus
+    container_name: prometheus
+    env_file: ./.env
+    environment:
+      - PROMETHEUS_USER=${PROMETHEUS_USER}
+    ports:
+      - '${PROMETHEUS_PORT}:9090'
+    command:
+      - --config.file=/etc/prometheus/prometheus.yml
+      - --storage.tsdb.path=/prometheus
+    depends_on:
+      - api
+    volumes:
+      - ./prometheus.yml:/etc/prometheus/prometheus.yml
+      - ./data/prometheus:/prometheus
+    networks:
+      - challenge
+
+  grafana:
+    image: grafana/grafana
+    container_name: grafana
+    env_file: ./.env
+    environment:
+      - GF_SECURITY_ADMIN_USER=${GRAFANA_USER}
+      - GF_SECURITY_ADMIN_PASSWORD=${GRAFANA_PASSWORD}
+      - GF_USERS_ALLOW_SIGN_UP=false
+    ports:
+      - '${GRAFANA_PORT}:3000'
+    depends_on:
+      - prometheus
+    volumes:
+      - ./data/grafana:/var/lib/grafana
+    networks:
+      - challenge
 
 volumes:
   data:
+
+networks:
+  challenge:
+    driver: bridge
