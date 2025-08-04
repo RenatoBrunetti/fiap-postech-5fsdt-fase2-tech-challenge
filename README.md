@@ -138,6 +138,12 @@ Comando utilizado: `docker compose up -d`
 
 ![Grafana Dashboard Node.js!](/assets/images/grafana-dashboard-nodejs.png 'Grafana Dashboard Node.js') _"Grafana Dashboard Node.js"_
 
+## Documentação
+
+### Swagger
+
+![Swagger!](/assets/images/swagger.png 'Swagger') _"Swagger"_
+
 ## Rotas HTTP
 
 ### Healthcheck
