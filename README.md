@@ -92,6 +92,14 @@ A arquitetura utilizada no projeto foi baseada na **Arquitetura Limpa** ou **Cle
   <summary>Prettier</summary>
   Um formatador de código que garante que todo o código-fonte da aplicação seja formatado de forma consistente. Ele elimina discussões sobre estilos de código, promovendo um ambiente de desenvolvimento mais colaborativo e focado na lógica de negócio.
 </details>
+<details>
+  <summary>Prometheus</summary>
+  Um sistema de monitoramento e alerta de código aberto. Ele coleta métricas de séries temporais da sua API (como tempo de resposta, uso de CPU e erros) e as armazena em seu próprio banco de dados, permitindo que você entenda o comportamento e a performance da aplicação ao longo do tempo.
+</details>
+<details>
+  <summary>Grafana</summary>
+  Uma plataforma de análise e visualização de dados. Ela se integra perfeitamente com o Prometheus (e outras fontes de dados) para criar painéis (dashboards) e gráficos interativos. Com o Grafana, é possível visualizar as métricas coletadas pelo Prometheus de forma clara e intuitiva, facilitando a identificação de problemas, a tomada de decisões e a otimização da API.
+</details>
 
 ## Banco de Dados
 
@@ -118,7 +126,23 @@ Comando utilizado: `docker compose up -d database`
 
 Comando utilizado: `docker compose up -d`
 
+## Observabilidade
+
+![Docker Desktop executanto os serviços de Banco de Dados, API e observabilidade!](/assets/images/docker-desktop-observabilidade.png 'Docker Desktop executanto os serviços de Banco de Dados, API e observabilidade') _"Docker Desktop executanto os serviços de Banco de Dados, API e observabilidade"_
+
+### Prometheus
+
+![Prometheus Query Example!](/assets/images/prometheus-query.png 'Prometheus Query Example') _"Prometheus Query Example"_
+
+### Grafana
+
+![Grafana Dashboard Node.js!](/assets/images/grafana-dashboard-nodejs.png 'Grafana Dashboard Node.js') _"Grafana Dashboard Node.js"_
+
 ## Rotas HTTP
+
+### Healthcheck
+
+- `GET` Get API Status `/status`
 
 ### Role
 

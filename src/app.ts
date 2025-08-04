@@ -1,5 +1,7 @@
 import 'reflect-metadata';
 import fastify from 'fastify';
+import fastifyHealthcheck from 'fastify-healthcheck';
+import fastifyMetrics from 'fastify-metrics';
 
 import '@/lib/typeorm/typeorm';
 import fastifySwagger from '@fastify/swagger';
@@ -37,3 +39,9 @@ app.register(postRoutes);
 app.register(postLogRoutes);
 app.register(roleRoutes);
 app.register(userRoutes);
+
+// Register healthcheck plugin
+app.register(fastifyHealthcheck, { healthcheckUrl: '/status' });
+
+// Register metrics plugin
+app.register(fastifyMetrics, { endpoint: '/metrics' });

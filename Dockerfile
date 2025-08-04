@@ -1,27 +1,14 @@
-# Stage 1: Build the application
 FROM node:22-alpine AS build
 
 WORKDIR /app
 
 COPY package.json ./
-COPY package-lock.json ./
-
-RUN npm install
 
 COPY . .
+
+RUN npm install --silent
 
 RUN npm run build
-
-COPY . .
-
-# Stage 2: Create the production-ready image
-FROM node:22-alpine
-
-WORKDIR /app
-
-COPY --from=build /app/package*.json ./
-COPY --from=build /app/node_modules ./node_modules
-COPY --from=build /app/build ./build
 
 ARG NODE_ENV
 ARG PORT
