@@ -263,7 +263,9 @@ A aplicação está hospedada na plataforma Render e está temporariamente dispo
 Após esse carregamento inicial, os endpoints da API funcionam normalmente. Recomendamos aguardar esse tempo na primeira requisição e, se necessário, realizar novas chamadas após a ativação do serviço.
 
 **API URL**: https://challenge-2wqh.onrender.com
+
 **Documentação (Swagger)**: https://challenge-2wqh.onrender.com/docs
+
 **Métricas (Prometheus)**: https://challenge-2wqh.onrender.com/metrics
 
 # ☑ Fluxo de requisições sugeridas para avaliação
