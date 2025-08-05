@@ -9,8 +9,6 @@ O projeto foi construído com foco em boas práticas de desenvolvimento e aplica
 `* Rafael Lucianetti Oliveira / RM361704`<br>
 `* Renato Carapiá Brunetti / RM362132`<br>
 
-<hr style="">
-
 # ⛭ Informações Técnicas
 
 ## → Arquitetura
@@ -230,8 +228,6 @@ O Swagger é uma ferramenta amplamente utilizada para a documentação técnica 
   - `GET` Find All Users `/users`
   - `POST` Create User `/users`
 
-<hr style="">
-
 # ▶ Como executar o projeto
 
 ## → Executar em ambiente local de desenvolvimento
@@ -261,8 +257,6 @@ O Swagger é uma ferramenta amplamente utilizada para a documentação técnica 
 1. Adicionar um arquivo `.env` na raiz do projeto com todas as variáveis de ambiente cadastradas, e que podem ser encontradas no arquivo `.env.example`.
 2. Executar o comando `docker compose up -d`, que através do **Docker Compose**, irá criar e executar o banco de dados com as tabelas inicialmente cadastradas e também executar a aplicação **Node.js** que ficará disponível através da porta cadastrada no arquivo `.env`. Dessa forma, o banco de dados e suas informações serão persistidas e salvas na pasta `data` na raiz do projeto.
 
-<hr style="">
-
 # 🌐 Acessar o projeto em Produção
 
 A aplicação está hospedada na plataforma Render e está temporariamente disponível para fins de avaliação. Por se tratar de um plano gratuito, a instância entra em modo de hibernação quando não está em uso, o que pode causar um tempo de carregamento inicial de até 30 segundos após períodos de inatividade.
@@ -271,8 +265,6 @@ Após esse carregamento inicial, os endpoints da API funcionam normalmente. Reco
 **API URL**: https://challenge-2wqh.onrender.com
 **Documentação (Swagger)**: https://challenge-2wqh.onrender.com/docs
 **Métricas (Prometheus)**: https://challenge-2wqh.onrender.com/metrics
-
-<hr style="">
 
 # ☑ Fluxo de requisições sugeridas para avaliação
 
@@ -533,8 +525,6 @@ process_cpu_user_seconds_total 5.090978
 process_cpu_system_seconds_total 2.6979070000000003
 ...
 ```
-
-<hr style="">
 
 # ⛬ Experiências e Desafios
 
