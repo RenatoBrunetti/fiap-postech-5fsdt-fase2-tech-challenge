@@ -13,6 +13,7 @@ const envSchema = z.object({
   DATABASE_NAME: z.string(),
   DATABASE_PASSWORD: z.string(),
   DATABASE_PORT: z.coerce.number(),
+  DATABASE_SSL: z.string().default('false'),
 });
 
 const envParse = envSchema.safeParse(process.env);

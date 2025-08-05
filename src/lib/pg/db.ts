@@ -8,6 +8,7 @@ const CONFIG = {
   database: env.DATABASE_NAME,
   password: env.DATABASE_PASSWORD,
   port: env.DATABASE_PORT,
+  ssl: env.DATABASE_SSL === 'true' ? true : false,
 };
 
 export class Database {

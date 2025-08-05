@@ -102,6 +102,10 @@ A arquitetura utilizada no projeto foi baseada na **Arquitetura Limpa** ou **Cle
   <summary>Grafana</summary>
   Uma plataforma de análise e visualização de dados. Ela se integra perfeitamente com o Prometheus (e outras fontes de dados) para criar painéis (dashboards) e gráficos interativos. Com o Grafana, é possível visualizar as métricas coletadas pelo Prometheus de forma clara e intuitiva, facilitando a identificação de problemas, a tomada de decisões e a otimização da API.
 </details>
+<details>
+  <summary>Swagger</summary>
+  Uma ferramenta de código aberto que ajuda a projetar, documentar e consumir APIs REST. Ele gera uma interface interativa e visualmente atraente que descreve todos os endpoints da sua API, seus parâmetros de entrada, tipos de retorno e códigos de status. O Swagger simplifica o trabalho tanto para os desenvolvedores que consomem a API quanto para a equipe que a mantém, garantindo uma documentação sempre atualizada e fácil de explorar.
+</details>
 
 ## Banco de Dados
 
@@ -151,15 +155,21 @@ Comando utilizado: `docker compose up -d`
 
 ![Prometheus Query Examplo!](/assets/images/prometheus-query.png 'Prometheus Query Examplo') _"Prometheus Query Examplo"_
 
+Basta acessar a URL da API com a porta selecionada para o Prometheus (sendo a porta padrão 9090), através do endpoint `/metrics` para acessar as métricas do Prometheus;
+
 ### Grafana
 
 ![Grafana Dashboard Node.js!](/assets/images/grafana-dashboard-nodejs.png 'Grafana Dashboard Node.js') _"Grafana Dashboard Node.js"_
+
+Basta acessar a URL da API com a porta selecionada para o Grafana (sendo a porta padrão 3000), para acessar o Grafana e visualizar os dashboards;
 
 ## Documentação
 
 ### Swagger
 
 ![Swagger!](/assets/images/swagger.png 'Swagger') _"Swagger"_
+
+Basta acessar a URL da API com a porta selecionada, através do endpoint `/docs` para acessar a documentação do Swagger;
 
 ## Rotas HTTP
 
