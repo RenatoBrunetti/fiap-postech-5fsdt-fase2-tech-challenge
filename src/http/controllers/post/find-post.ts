@@ -1,7 +1,7 @@
 import { FastifyReply, FastifyRequest } from 'fastify';
 import { z } from 'zod';
 
-import { MakeFindPostUseCase } from '@/use-cases/factories/make-find-post';
+import { makeFindPostUseCase } from '@/use-cases/factories/make-find-post';
 
 export async function findPost(request: FastifyRequest, reply: FastifyReply) {
   const registerParamsSchema = z.object({
@@ -9,7 +9,7 @@ export async function findPost(request: FastifyRequest, reply: FastifyReply) {
   });
 
   const { id } = registerParamsSchema.parse(request.params);
-  const findPostUseCase = MakeFindPostUseCase();
+  const findPostUseCase = makeFindPostUseCase();
   const post = await findPostUseCase.handler(id);
   return reply.status(200).send(post);
 }
