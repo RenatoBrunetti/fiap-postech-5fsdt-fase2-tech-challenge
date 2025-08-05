@@ -30,7 +30,8 @@ jobs:
             --build-arg="DATABASE_HOST=${{ secrets.DATABASE_HOST }}" \
             --build-arg="DATABASE_NAME=${{ secrets.DATABASE_NAME }}" \
             --build-arg="DATABASE_PASSWORD=${{ secrets.DATABASE_PASSWORD }}" \
-            --build-arg="DATABASE_PORT=${{ secrets.DATABASE_PORT }}" .
+            --build-arg="DATABASE_PORT=${{ secrets.DATABASE_PORT }}" \
+            --build-arg="DATABASE_SSL=${{ secrets.DATABASE_SSL }}" .
           docker push $DOCKER_USERNAME/challenge:latest
 
   node-build:
