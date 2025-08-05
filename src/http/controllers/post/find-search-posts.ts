@@ -1,7 +1,7 @@
 import { FastifyReply, FastifyRequest } from 'fastify';
 import { z } from 'zod';
 
-import { MakeFindSearchPostsUseCase } from '@/use-cases/factories/make-find-search-posts';
+import { makeFindSearchPostsUseCase } from '@/use-cases/factories/make-find-search-posts';
 
 export async function findSearchPosts(
   request: FastifyRequest,
@@ -12,7 +12,7 @@ export async function findSearchPosts(
   });
 
   const { search } = registerQuerySchema.parse(request.query);
-  const findSearchPostsUseCase = MakeFindSearchPostsUseCase();
+  const findSearchPostsUseCase = makeFindSearchPostsUseCase();
   const post = await findSearchPostsUseCase.handler(search);
   return reply.status(200).send(post);
 }

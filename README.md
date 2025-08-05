@@ -217,16 +217,17 @@ O Swagger é uma ferramenta amplamente utilizada para a documentação técnica 
 - **Role**
   - `GET` Find All Roles `/roles`
 - **Post**
-  - `DELETE` Delete Post `/posts`
+  - `DELETE` Delete Post `/posts:id`
   - `GET` Find All Posts `/posts`
-  - `GET` Find Post `/posts`
+  - `GET` Find Post `/posts:id`
   - `POST` Create Post `/posts`
-  - `PUT` Update Post `/posts`
+  - `PUT` Update Post `/posts:id`
 - **Post Log**
   - `GET` Find All PostLogs `/post-logs`
 - **User**
   - `GET` Find All Users `/users`
   - `POST` Create User `/users`
+  - `GET` Find User `/user:id`
 
 # ▶ Como executar o projeto
 
@@ -493,9 +494,17 @@ StatusCode: `200`
 
 ## 10. Deletar postagem `Post` através do identificador
 
-**Descrição:** Esta rota deleta permanentemente uma postagem (post) através do seu identificador.
+**Descrição:** Esta rota permite a exclusão permanente de uma postagem (post) através dos identificadores da postagem e do usuário .
 
 **Endpoint:** `DELETE`: `https://challenge-2wqh.onrender.com/posts/899059c1-0c8b-4753-9d22-d04622a1865b`
+
+**Parâmetros:** `Body`:
+
+```json
+{
+  "user_id": "7880ac4d-d07e-4caf-adf2-3543f8d900f5"
+}
+```
 
 **Resposta Esperada:**
 
