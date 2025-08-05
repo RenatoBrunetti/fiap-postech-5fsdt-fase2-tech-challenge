@@ -7,8 +7,8 @@ export interface IUser {
   username: string;
   password: string;
   active?: boolean;
-  created_at?: Date;
-  updated_at?: Date;
+  created_at?: Date | string;
+  updated_at?: Date | string;
 
   role?: IRole;
   role_id: string;
