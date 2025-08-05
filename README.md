@@ -155,15 +155,21 @@ Comando utilizado: `docker compose up -d`
 
 ![Prometheus Query Examplo!](/assets/images/prometheus-query.png 'Prometheus Query Examplo') _"Prometheus Query Examplo"_
 
+Basta acessar a URL da API com a porta selecionada para o Prometheus (sendo a porta padrão 9090), através do endpoint `/metrics` para acessar as métricas do Prometheus;
+
 ### Grafana
 
 ![Grafana Dashboard Node.js!](/assets/images/grafana-dashboard-nodejs.png 'Grafana Dashboard Node.js') _"Grafana Dashboard Node.js"_
+
+Basta acessar a URL da API com a porta selecionada para o Grafana (sendo a porta padrão 3000), para acessar o Grafana e visualizar os dashboards;
 
 ## Documentação
 
 ### Swagger
 
 ![Swagger!](/assets/images/swagger.png 'Swagger') _"Swagger"_
+
+Basta acessar a URL da API com a porta selecionada, através do endpoint `/docs` para acessar a documentação do Swagger;
 
 ## Rotas HTTP
 
