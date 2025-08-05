@@ -9,8 +9,9 @@ O projeto foi construído com foco em boas práticas de desenvolvimento e aplica
 `* Rafael Lucianetti Oliveira / RM361704`<br>
 `* Renato Carapiá Brunetti / RM362132`<br>
 
-<div style="background: #2A7B9B;
-background: linear-gradient(90deg,rgba(42, 123, 155, 1) 0%, rgba(87, 199, 133, 1) 50%, rgba(237, 221, 83, 1) 100%); width: 100%; height: 4px; margin: 24px 0;"></div>
+<hr style="height: 0; border: 0; border-top: 2px solid rgba(42, 123, 155, 1); outline: none; margin: 0;">
+<hr style="height: 0; border: 0; border-top: 2px solid rgba(87, 199, 133, 1); outline: none; margin: 0;">
+<hr style="height: 0; border: 0; border-top: 2px solid rgba(237, 221, 83, 1); outline: none; margin: 0;">
 
 # ⛭ Informações Técnicas
 
@@ -22,7 +23,7 @@ Essa separação traz como principal vantagem a clareza na estrutura do projeto,
 
 ![Diagrama de arquitetura!](/assets/images/arch-app-diagram.png 'Diagrama de arquitetura') _"Diagrama de arquitetura"_
 
----
+<hr style="height: 0; border: 0; border-top: 2px solid rgba(42, 123, 155, 1); outline: none; margin: 0;">
 
 ### + Descrição técnica de funcionalidades
 
@@ -33,7 +34,7 @@ Essa separação traz como principal vantagem a clareza na estrutura do projeto,
 - As **Bibliotecas** implementam os **Drivers** dos bancos de dados ou o **ORM** para intermediar as consultas ao banco de dados de acrodo com os modelos das **Entidades**.
 - As **Entidades** implementam e refletem as definições das tabelas e colunas existentes no banco de dados.
 
----
+<hr style="height: 0; border: 0; border-top: 2px solid rgba(42, 123, 155, 1); outline: none; margin: 0;">
 
 ### + Descrição do fluxo de requisições
 
@@ -66,7 +67,7 @@ O **PostgreSQL** foi escolhido por sua praticidade, compatibilidade com ferramen
 - `post`: Responsável por armazenar as postagens cadastradas.
 - `post_log`: Responsável por armazenar os logs de manipulação das postagens.
 
----
+<hr style="height: 0; border: 0; border-top: 2px solid rgba(42, 123, 155, 1); outline: none; margin: 0;">
 
 ### + ORM
 
@@ -92,13 +93,13 @@ Comando utilizado: `docker compose up -d database`
 
 Comando utilizado: `docker compose up -d`
 
----
+<hr style="height: 0; border: 0; border-top: 2px solid rgba(42, 123, 155, 1); outline: none; margin: 0;">
 
 ### + Docker Compose
 
 O Docker Compose é uma ferramenta que permite orquestrar múltiplos containers de forma simples, por meio de um arquivo YAML. No projeto, ele foi utilizado para configurar e executar os serviços da aplicação, banco de dados e ferramentas de observabilidade de forma integrada, facilitando o desenvolvimento, testes e manutenção do sistema como um todo.
 
----
+<hr style="height: 0; border: 0; border-top: 2px solid rgba(42, 123, 155, 1); outline: none; margin: 0;">
 
 ### + DockerHub
 
@@ -120,7 +121,7 @@ O Prometheus é uma ferramenta de monitoramento e coleta de métricas voltada pa
 
 ![Exemplo de consulta no Prometheus da aplicação!](/assets/images/prometheus-query.png 'Exemplo de consulta no Prometheus da aplicação') _"Exemplo de consulta no Prometheus da aplicação"_
 
----
+<hr style="height: 0; border: 0; border-top: 2px solid rgba(42, 123, 155, 1); outline: none; margin: 0;">
 
 ### + Grafana
 
@@ -243,8 +244,9 @@ O Swagger é uma ferramenta amplamente utilizada para a documentação técnica 
   - `GET` Find All Users `/users`
   - `POST` Create User `/users`
 
-<div style="background: #2A7B9B;
-background: linear-gradient(90deg,rgba(42, 123, 155, 1) 0%, rgba(87, 199, 133, 1) 50%, rgba(237, 221, 83, 1) 100%); width: 100%; height: 4px; margin: 24px 0;"></div>
+<hr style="height: 0; border: 0; border-top: 2px solid rgba(42, 123, 155, 1); outline: none; margin: 0;">
+<hr style="height: 0; border: 0; border-top: 2px solid rgba(87, 199, 133, 1); outline: none; margin: 0;">
+<hr style="height: 0; border: 0; border-top: 2px solid rgba(237, 221, 83, 1); outline: none; margin: 0;">
 
 # ▶ Como executar o projeto
 
@@ -274,3 +276,300 @@ background: linear-gradient(90deg,rgba(42, 123, 155, 1) 0%, rgba(87, 199, 133, 1
 
 1. Adicionar um arquivo `.env` na raiz do projeto com todas as variáveis de ambiente cadastradas, e que podem ser encontradas no arquivo `.env.example`.
 2. Executar o comando `docker compose up -d`, que através do **Docker Compose**, irá criar e executar o banco de dados com as tabelas inicialmente cadastradas e também executar a aplicação **Node.js** que ficará disponível através da porta cadastrada no arquivo `.env`. Dessa forma, o banco de dados e suas informações serão persistidas e salvas na pasta `data` na raiz do projeto.
+
+<hr style="height: 0; border: 0; border-top: 2px solid rgba(42, 123, 155, 1); outline: none; margin: 0;">
+<hr style="height: 0; border: 0; border-top: 2px solid rgba(87, 199, 133, 1); outline: none; margin: 0;">
+<hr style="height: 0; border: 0; border-top: 2px solid rgba(237, 221, 83, 1); outline: none; margin: 0;">
+
+# 🌐 Acessar o projeto em Produção
+
+A aplicação está hospedada na plataforma Render e está temporariamente disponível para fins de avaliação. Por se tratar de um plano gratuito, a instância entra em modo de hibernação quando não está em uso, o que pode causar um tempo de carregamento inicial de até 30 segundos após períodos de inatividade.
+Após esse carregamento inicial, os endpoints da API funcionam normalmente. Recomendamos aguardar esse tempo na primeira requisição e, se necessário, realizar novas chamadas após a ativação do serviço.
+
+**API URL**: https://challenge-2wqh.onrender.com
+**Documentação (Swagger)**: https://challenge-2wqh.onrender.com/docs
+**Métricas (Prometheus)**: https://challenge-2wqh.onrender.com/metrics
+
+<hr style="height: 0; border: 0; border-top: 2px solid rgba(42, 123, 155, 1); outline: none; margin: 0;">
+<hr style="height: 0; border: 0; border-top: 2px solid rgba(87, 199, 133, 1); outline: none; margin: 0;">
+<hr style="height: 0; border: 0; border-top: 2px solid rgba(237, 221, 83, 1); outline: none; margin: 0;">
+
+# ☑ Fluxo de requisições sugeridas para avaliação
+
+## 1. Verificar o `Status` da aplicação
+
+**Descrição:** Esta rota é utilizada para verificar se a aplicação está online e funcionando corretamente. Ela retorna uma resposta simples, indicando que o servidor está ativo e pronto para receber requisições.
+
+**Endpoint:** `GET`: `https://challenge-2wqh.onrender.com/status`
+
+**Resposta Esperada:**
+
+StatusCode: `200`
+
+```json
+{
+  "statusCode": 200,
+  "status": "ok"
+}
+```
+
+## 2. Listar as permissões `Roles` disponíveis
+
+**Descrição:** Esta rota retorna a lista de permissões (roles) disponíveis para a criação de usuários no sistema. As opções atualmente disponíveis são: admin e student.
+
+**Endpoint:** `GET`: `https://challenge-2wqh.onrender.com/roles`
+
+**Resposta Esperada:**
+
+StatusCode: `200`
+
+```json
+[
+  {
+    "id": "f5734ad8-8646-4882-ad4c-4c360efa0d17",
+    "name": "admin",
+    "description": "Administrator with full access",
+    "created_at": "2025-08-04T23:37:15.496Z",
+    "updated_at": "2025-08-04T23:37:15.496Z"
+  },
+  {
+    "id": "218cf765-cef0-4f5c-a4d9-a61711d12c35",
+    "name": "student",
+    "description": "Student with limited access",
+    "created_at": "2025-08-04T23:37:15.496Z",
+    "updated_at": "2025-08-04T23:37:15.496Z"
+  }
+]
+```
+
+## 3. Criar um novo usuário `User` Professor
+
+**Descrição:** Esta rota permite criar um novo usuário no sistema, recebendo os dados necessários como `username`, `password` e `role_id` (referente a admin ou student) no corpo da requisição. As informações são validadas e, em caso de sucesso, o usuário é armazenado no banco de dados.
+
+**Endpoint:** `POST`: `https://challenge-2wqh.onrender.com/users`
+
+**Parâmetros:** `Body`:
+
+```json
+{
+  "username": "Uncle Ben",
+  "password": "secret123",
+  "role_id": "f5734ad8-8646-4882-ad4c-4c360efa0d17"
+}
+```
+
+**Resposta Esperada:**
+
+StatusCode: `201`
+
+```json
+{
+  "message": "User created successfully"
+}
+```
+
+## 4. Listar os usuários `Users` disponíveis
+
+**Descrição:** Esta rota retorna a lista de usuários (users) disponíveis para a criação e edição de postagens no sistema.
+
+**Endpoint:** `GET`: `https://challenge-2wqh.onrender.com/users`
+
+**Resposta Esperada:**
+
+StatusCode: `200`
+
+```json
+[
+  {
+    "id": "7880ac4d-d07e-4caf-adf2-3543f8d900f5",
+    "username": "Uncle Ben",
+    "role_id": "f5734ad8-8646-4882-ad4c-4c360efa0d17",
+    "created_at": "2025-08-05T18:24:10.921Z",
+    "updated_at": "2025-08-05T18:24:10.921Z"
+  }
+]
+```
+
+## 5. Criar uma nova postagem `Post`
+
+**Descrição:** Esta rota permite criar uma nova postagem no sistema, recebendo os dados necessários como `title`, `content` e `user_id` no corpo da requisição. As informações são validadas e, em caso de sucesso, a postagem é armazenado no banco de dados. Nesta rota, um log de postagem é gerado automaticamente e armazenado na tabela `Post Log` com as informações que relacionam o usuário e a postagem com a ação `create`.
+
+**Endpoint:** `POST`: `https://challenge-2wqh.onrender.com/posts`
+
+**Parâmetros:** `Body`:
+
+```json
+{
+  "title": "Com grandes poderes vêm grandes responsabilidades",
+  "content": "A ideia central é que, com a capacidade de causar um grande impacto no mundo, seja positivo ou negativo, surge a obrigação moral de usar esse poder de forma responsável e para o bem comum.",
+  "user_id": "7880ac4d-d07e-4caf-adf2-3543f8d900f5"
+}
+```
+
+**Resposta Esperada:**
+
+StatusCode: `201`
+
+```json
+{
+  "message": "Post created successfully"
+}
+```
+
+## 6. Listar as postagens `Posts` disponíveis
+
+**Descrição:** Esta rota retorna a lista de postagens (posts) disponíveis.
+
+**Endpoint:** `GET`: `https://challenge-2wqh.onrender.com/posts`
+
+**Resposta Esperada:**
+
+StatusCode: `200`
+
+```json
+[
+  {
+    "id": "899059c1-0c8b-4753-9d22-d04622a1865b",
+    "title": "Com grandes poderes vêm grandes responsabilidades",
+    "content": "A ideia central é que, com a capacidade de causar um grande impacto no mundo, seja positivo ou negativo, surge a obrigação moral de usar esse poder de forma responsável e para o bem comum.",
+    "user_id": "7880ac4d-d07e-4caf-adf2-3543f8d900f5",
+    "created_at": "2025-08-05T18:34:44.014Z",
+    "updated_at": "2025-08-05T18:34:44.014Z"
+  }
+]
+```
+
+## 7. Retornar postagem `Post` através do identificador
+
+**Descrição:** Esta rota retorna uma única postagem (post) através da busca pelo seu identificador.
+
+**Endpoint:** `GET`: `https://challenge-2wqh.onrender.com/posts/899059c1-0c8b-4753-9d22-d04622a1865b`
+
+**Resposta Esperada:**
+
+StatusCode: `200`
+
+```json
+{
+  "id": "899059c1-0c8b-4753-9d22-d04622a1865b",
+  "title": "Com grandes poderes vêm grandes responsabilidades",
+  "content": "A ideia central é que, com a capacidade de causar um grande impacto no mundo, seja positivo ou negativo, surge a obrigação moral de usar esse poder de forma responsável e para o bem comum.",
+  "user_id": "7880ac4d-d07e-4caf-adf2-3543f8d900f5",
+  "created_at": "2025-08-05T18:34:44.014Z",
+  "updated_at": "2025-08-05T18:34:44.014Z"
+}
+```
+
+## 8. Listar as postagens `Posts` através da busca pelo título ou conteúdo
+
+**Descrição:** Esta rota retorna uma lista de postagens (post) através da busca por parte do título ou conteúdo.
+
+**Endpoint:** `GET`: `https://challenge-2wqh.onrender.com/posts/search`
+
+**Parâmetros:** `Query`:
+
+```
+search: responsabilidades
+```
+
+**Resposta Esperada:**
+
+StatusCode: `200`
+
+```json
+[
+  {
+    "id": "899059c1-0c8b-4753-9d22-d04622a1865b",
+    "title": "Com grandes poderes vêm grandes responsabilidades",
+    "content": "A ideia central é que, com a capacidade de causar um grande impacto no mundo, seja positivo ou negativo, surge a obrigação moral de usar esse poder de forma responsável e para o bem comum.",
+    "user_id": "7880ac4d-d07e-4caf-adf2-3543f8d900f5",
+    "created_at": "2025-08-05T18:34:44.014Z",
+    "updated_at": "2025-08-05T18:34:44.014Z"
+  }
+]
+```
+
+## 9. Editar uma postagem `Post`
+
+**Descrição:** Esta rota permite editar uma postagem no sistema, recebendo pelo menos um dos dois dados necessários `title` ou `content` e `user_id` que é obrigatório no corpo da requisição. As informações são validadas e, em caso de sucesso, a postagem é alterada no banco de dados. Nesta rota, um log de postagem é gerado automaticamente e armazenado na tabela `Post Log` com as informações que relacionam o usuário e a postagem com a ação `update`.
+
+**Endpoint:** `PUT`: `https://challenge-2wqh.onrender.com/posts/899059c1-0c8b-4753-9d22-d04622a1865b`
+
+**Parâmetros:** `Body`:
+
+```json
+{
+  "content": "A frase tem origem nos quadrinhos da Marvel, mais especificamente na história de Peter Parker, o Homem-Aranha. A ideia central é que, com a capacidade de causar um grande impacto no mundo, seja positivo ou negativo, surge a obrigação moral de usar esse poder de forma responsável e para o bem comum.",
+  "user_id": "7880ac4d-d07e-4caf-adf2-3543f8d900f5"
+}
+```
+
+**Resposta Esperada:**
+
+StatusCode: `200`
+
+```json
+{
+  "id": "899059c1-0c8b-4753-9d22-d04622a1865b",
+  "content": "A frase tem origem nos quadrinhos da Marvel, mais especificamente na história de Peter Parker, o Homem-Aranha. A ideia central é que, com a capacidade de causar um grande impacto no mundo, seja positivo ou negativo, surge a obrigação moral de usar esse poder de forma responsável e para o bem comum.",
+  "user_id": "7880ac4d-d07e-4caf-adf2-3543f8d900f5",
+  "updated_at": "2025-08-05T18:52:02.672Z"
+}
+```
+
+## 10. Deletar postagem `Post` através do identificador
+
+**Descrição:** Esta rota deleta permanentemente uma postagem (post) através do seu identificador.
+
+**Endpoint:** `DELETE`: `https://challenge-2wqh.onrender.com/posts/899059c1-0c8b-4753-9d22-d04622a1865b`
+
+**Resposta Esperada:**
+
+StatusCode: `200`
+
+```json
+{
+  "message": "Post deleted successfully"
+}
+```
+
+## 11. Listar as métricas do Prometheus
+
+**Descrição:** Esta rota está temporariamente pública para avaliação. Ela retorna uma lista métricas da API coletadas pelo serviço do Prometheus.
+
+**Endpoint:** `GET`: `https://challenge-2wqh.onrender.com/metrics`
+
+**Resposta Esperada:**
+
+StatusCode: `200`
+
+```txt
+# HELP process_cpu_user_seconds_total Total user CPU time spent in seconds.
+# TYPE process_cpu_user_seconds_total counter
+process_cpu_user_seconds_total 5.090978
+
+# HELP process_cpu_system_seconds_total Total system CPU time spent in seconds.
+# TYPE process_cpu_system_seconds_total counter
+process_cpu_system_seconds_total 2.6979070000000003
+...
+```
+
+<hr style="height: 0; border: 0; border-top: 2px solid rgba(42, 123, 155, 1); outline: none; margin: 0;">
+<hr style="height: 0; border: 0; border-top: 2px solid rgba(87, 199, 133, 1); outline: none; margin: 0;">
+<hr style="height: 0; border: 0; border-top: 2px solid rgba(237, 221, 83, 1); outline: none; margin: 0;">
+
+# ⛬ Experiências e Desafios
+
+Desenvolver a Blog API foi uma experiência rica em aprendizado técnico e colaborativo. A aplicação reúne diversas tecnologias modernas e boas práticas de desenvolvimento de software, o que exigiu planejamento, organização e constante troca de conhecimentos entre os membros da equipe.
+
+Um dos principais desafios enfrentados foi a aplicação dos princípios da arquitetura limpa, que exigiu uma estrutura clara e bem separada entre camadas como entidades, casos de uso, controladores e repositórios. Essa abordagem, embora complexa no início, trouxe muitos benefícios, como maior legibilidade, facilidade de manutenção e escalabilidade.
+
+Outro ponto desafiador foi a containerização completa da aplicação com Docker e Docker Compose, incluindo não apenas a API e o banco de dados PostgreSQL, mas também ferramentas de observabilidade como Prometheus e Grafana. Foi necessário entender a orquestração dos serviços, configuração de volumes, redes e variáveis de ambiente para garantir que tudo funcionasse de forma integrada.
+
+A implementação do CI/CD com GitHub Actions e a publicação da aplicação em produção na plataforma Render também representaram etapas importantes. Configurar pipelines que automatizassem testes, build da imagem Docker e deploy exigiu atenção aos detalhes e ajustes constantes até atingir um fluxo confiável.
+
+Além disso, tivemos o desafio de documentar toda a API de forma clara e acessível com o Swagger, o que se mostrou fundamental para facilitar o uso, os testes e a avaliação do sistema.
+
+Como equipe, ganhamos experiência prática com ferramentas e conceitos essenciais para projetos reais, como: versionamento de código, code review, integração contínua, deploy automatizado, testes automatizados com Jest, organização de entidades com TypeORM, além de boas práticas com ESLint, Prettier e TypeScript.
+
+No fim, o projeto consolidou importantes aprendizados sobre como construir e entregar uma aplicação back-end robusta, moderna e preparada para ambientes de produção — da ideia inicial até o deploy em nuvem.
