@@ -9,9 +9,8 @@ O projeto foi construído com foco em boas práticas de desenvolvimento e aplica
 `* Rafael Lucianetti Oliveira / RM361704`<br>
 `* Renato Carapiá Brunetti / RM362132`<br>
 
-<hr style="height: 0; border: 0; border-top: 2px solid rgba(42, 123, 155, 1); outline: none; margin: 0;">
-<hr style="height: 0; border: 0; border-top: 2px solid rgba(87, 199, 133, 1); outline: none; margin: 0;">
-<hr style="height: 0; border: 0; border-top: 2px solid rgba(237, 221, 83, 1); outline: none; margin: 0;">
+<hr>
+<hr>
 
 # ⛭ Informações Técnicas
 
@@ -23,7 +22,7 @@ Essa separação traz como principal vantagem a clareza na estrutura do projeto,
 
 ![Diagrama de arquitetura!](/assets/images/arch-app-diagram.png 'Diagrama de arquitetura') _"Diagrama de arquitetura"_
 
-<hr style="height: 0; border: 0; border-top: 2px solid rgba(42, 123, 155, 1); outline: none; margin: 0;">
+<hr>
 
 ### + Descrição técnica de funcionalidades
 
@@ -34,7 +33,7 @@ Essa separação traz como principal vantagem a clareza na estrutura do projeto,
 - As **Bibliotecas** implementam os **Drivers** dos bancos de dados ou o **ORM** para intermediar as consultas ao banco de dados de acrodo com os modelos das **Entidades**.
 - As **Entidades** implementam e refletem as definições das tabelas e colunas existentes no banco de dados.
 
-<hr style="height: 0; border: 0; border-top: 2px solid rgba(42, 123, 155, 1); outline: none; margin: 0;">
+<hr>
 
 ### + Descrição do fluxo de requisições
 
@@ -67,7 +66,7 @@ O **PostgreSQL** foi escolhido por sua praticidade, compatibilidade com ferramen
 - `post`: Responsável por armazenar as postagens cadastradas.
 - `post_log`: Responsável por armazenar os logs de manipulação das postagens.
 
-<hr style="height: 0; border: 0; border-top: 2px solid rgba(42, 123, 155, 1); outline: none; margin: 0;">
+<hr>
 
 ### + ORM
 
@@ -93,13 +92,13 @@ Comando utilizado: `docker compose up -d database`
 
 Comando utilizado: `docker compose up -d`
 
-<hr style="height: 0; border: 0; border-top: 2px solid rgba(42, 123, 155, 1); outline: none; margin: 0;">
+<hr>
 
 ### + Docker Compose
 
 O Docker Compose é uma ferramenta que permite orquestrar múltiplos containers de forma simples, por meio de um arquivo YAML. No projeto, ele foi utilizado para configurar e executar os serviços da aplicação, banco de dados e ferramentas de observabilidade de forma integrada, facilitando o desenvolvimento, testes e manutenção do sistema como um todo.
 
-<hr style="height: 0; border: 0; border-top: 2px solid rgba(42, 123, 155, 1); outline: none; margin: 0;">
+<hr>
 
 ### + DockerHub
 
@@ -121,7 +120,7 @@ O Prometheus é uma ferramenta de monitoramento e coleta de métricas voltada pa
 
 ![Exemplo de consulta no Prometheus da aplicação!](/assets/images/prometheus-query.png 'Exemplo de consulta no Prometheus da aplicação') _"Exemplo de consulta no Prometheus da aplicação"_
 
-<hr style="height: 0; border: 0; border-top: 2px solid rgba(42, 123, 155, 1); outline: none; margin: 0;">
+<hr>
 
 ### + Grafana
 
@@ -244,9 +243,8 @@ O Swagger é uma ferramenta amplamente utilizada para a documentação técnica 
   - `GET` Find All Users `/users`
   - `POST` Create User `/users`
 
-<hr style="height: 0; border: 0; border-top: 2px solid rgba(42, 123, 155, 1); outline: none; margin: 0;">
-<hr style="height: 0; border: 0; border-top: 2px solid rgba(87, 199, 133, 1); outline: none; margin: 0;">
-<hr style="height: 0; border: 0; border-top: 2px solid rgba(237, 221, 83, 1); outline: none; margin: 0;">
+<hr>
+<hr>
 
 # ▶ Como executar o projeto
 
@@ -277,9 +275,8 @@ O Swagger é uma ferramenta amplamente utilizada para a documentação técnica 
 1. Adicionar um arquivo `.env` na raiz do projeto com todas as variáveis de ambiente cadastradas, e que podem ser encontradas no arquivo `.env.example`.
 2. Executar o comando `docker compose up -d`, que através do **Docker Compose**, irá criar e executar o banco de dados com as tabelas inicialmente cadastradas e também executar a aplicação **Node.js** que ficará disponível através da porta cadastrada no arquivo `.env`. Dessa forma, o banco de dados e suas informações serão persistidas e salvas na pasta `data` na raiz do projeto.
 
-<hr style="height: 0; border: 0; border-top: 2px solid rgba(42, 123, 155, 1); outline: none; margin: 0;">
-<hr style="height: 0; border: 0; border-top: 2px solid rgba(87, 199, 133, 1); outline: none; margin: 0;">
-<hr style="height: 0; border: 0; border-top: 2px solid rgba(237, 221, 83, 1); outline: none; margin: 0;">
+<hr>
+<hr>
 
 # 🌐 Acessar o projeto em Produção
 
@@ -290,9 +287,8 @@ Após esse carregamento inicial, os endpoints da API funcionam normalmente. Reco
 **Documentação (Swagger)**: https://challenge-2wqh.onrender.com/docs
 **Métricas (Prometheus)**: https://challenge-2wqh.onrender.com/metrics
 
-<hr style="height: 0; border: 0; border-top: 2px solid rgba(42, 123, 155, 1); outline: none; margin: 0;">
-<hr style="height: 0; border: 0; border-top: 2px solid rgba(87, 199, 133, 1); outline: none; margin: 0;">
-<hr style="height: 0; border: 0; border-top: 2px solid rgba(237, 221, 83, 1); outline: none; margin: 0;">
+<hr>
+<hr>
 
 # ☑ Fluxo de requisições sugeridas para avaliação
 
@@ -554,9 +550,8 @@ process_cpu_system_seconds_total 2.6979070000000003
 ...
 ```
 
-<hr style="height: 0; border: 0; border-top: 2px solid rgba(42, 123, 155, 1); outline: none; margin: 0;">
-<hr style="height: 0; border: 0; border-top: 2px solid rgba(87, 199, 133, 1); outline: none; margin: 0;">
-<hr style="height: 0; border: 0; border-top: 2px solid rgba(237, 221, 83, 1); outline: none; margin: 0;">
+<hr>
+<hr>
 
 # ⛬ Experiências e Desafios
 
