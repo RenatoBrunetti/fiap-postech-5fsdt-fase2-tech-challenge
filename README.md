@@ -1,6 +1,8 @@
-# FIAP Postech 5FSDT Fase2 Tech Challenge - Blog API
+# Blog API - Tech Challenge
 
-Alunos:
+> FIAP Postech 5FSDT Fase2
+
+**Alunos:**
 
 - Eduarda Campos Aragão / RM365002
 - Esdras Correa / RM361922
@@ -126,13 +128,28 @@ Comando utilizado: `docker compose up -d database`
 
 Comando utilizado: `docker compose up -d`
 
+## Ci/CD
+
+### GitHub Actions
+
+![DockerHub!](/assets/images/github-actions-01.png 'DockerHub')
+![DockerHub!](/assets/images/github-actions-02.png 'DockerHub') _"GitHub Actions"_
+
+### DockerHub
+
+![DockerHub!](/assets/images/dockerhub.png 'DockerHub') _"DockerHub"_
+
+### Render
+
+![Render!](/assets/images/render.png 'Render') _"Render"_
+
 ## Observabilidade
 
 ![Docker Desktop executanto os serviços de Banco de Dados, API e observabilidade!](/assets/images/docker-desktop-observabilidade.png 'Docker Desktop executanto os serviços de Banco de Dados, API e observabilidade') _"Docker Desktop executanto os serviços de Banco de Dados, API e observabilidade"_
 
 ### Prometheus
 
-![Prometheus Query Example!](/assets/images/prometheus-query.png 'Prometheus Query Example') _"Prometheus Query Example"_
+![Prometheus Query Examplo!](/assets/images/prometheus-query.png 'Prometheus Query Examplo') _"Prometheus Query Examplo"_
 
 ### Grafana
 
@@ -152,7 +169,7 @@ Comando utilizado: `docker compose up -d`
 
 ### Role
 
-- `GET` Find All Roles `/role`
+- `GET` Find All Roles `/roles`
 
 ### Post
 
@@ -164,9 +181,9 @@ Comando utilizado: `docker compose up -d`
 
 ### Post Log
 
-- `GET` Find All PostLogs `/post-log`
+- `GET` Find All PostLogs `/post-logs`
 
 ### User
 
-- `GET` Find All Users `/user`
-- `POST` Create User `/user`
+- `GET` Find All Users `/users`
+- `POST` Create User `/users`
