@@ -41,3 +41,19 @@ create table if not exists "post_log" (
   "post_id" uuid not null references "post"("id") on delete cascade, -- Se uma postagem for deletada, seus logs também serão deletados
   "user_id" uuid not null references "user"("id") on delete set null -- Se o usuário que realizou a ação for deletado, o user_id no log será NULL
 );
+
+INSERT INTO "user" ("id", "username", "password", "role_id")
+VALUES (
+  gen_random_uuid(),
+  'professor',
+  'senha-professor123', 
+  'bf3a567a-d334-4993-bb01-f6ecf6566c21' 
+);
+
+INSERT INTO "user" ("id", "username", "password", "role_id")
+VALUES (
+  gen_random_uuid(),
+  'aluno',
+  'senha-aluno123', 
+  'b13154ef-38e6-4e9d-a0e8-c2284ba0f9c4' 
+);
