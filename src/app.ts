@@ -4,6 +4,7 @@ import fastifyHealthcheck from 'fastify-healthcheck';
 import fastifyMetrics from 'fastify-metrics';
 import fastifySwagger from '@fastify/swagger';
 import fastifySwaggerUI from '@fastify/swagger-ui';
+import fastifyCors from '@fastify/cors';
 
 // Database ORM
 import '@/lib/typeorm/typeorm';
@@ -14,10 +15,17 @@ import { postLogRoutes } from '@/http/controllers/post-log/routes';
 import { roleRoutes } from '@/http/controllers/role/routes';
 import { userRoutes } from '@/http/controllers/user/routes';
 
+// Imported schemas
 import { getStatusSchema } from '@/schemas/status/get-status';
 
 // Export Fastify App instance
 export const app = fastify();
+
+// CORS setup
+app.register(fastifyCors, {
+  origin: '*',
+  methods: ['GET', 'PUT', 'POST', 'DELETE', 'OPTIONS'],
+});
 
 // Swagger documentation setup
 app.register(fastifySwagger, {

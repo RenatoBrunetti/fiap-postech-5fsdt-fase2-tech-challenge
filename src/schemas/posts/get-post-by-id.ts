@@ -23,6 +23,10 @@ export const findPostSchema = {
         user_id: { type: 'string', format: 'uuid' },
         created_at: { type: 'string', format: 'date-time' },
         updated_at: { type: 'string', format: 'date-time' },
+        user: {
+          id: { type: 'string', format: 'uuid' },
+          username: { type: 'string' },
+        },
       },
     },
     // 404: {
