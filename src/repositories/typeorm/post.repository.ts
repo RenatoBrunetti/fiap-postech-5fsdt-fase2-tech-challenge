@@ -22,6 +22,7 @@ export class PostRepository implements IPostRepository {
       relations: ['user'],
       select: {
         user: {
+          id: true,
           username: true,
         },
       },
@@ -34,6 +35,7 @@ export class PostRepository implements IPostRepository {
       relations: ['user'],
       select: {
         user: {
+          id: true,
           username: true,
         },
       },
@@ -49,6 +51,7 @@ export class PostRepository implements IPostRepository {
       relations: ['user'],
       select: {
         user: {
+          id: true,
           username: true,
         },
       },
