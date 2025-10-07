@@ -10,6 +10,7 @@ import fastifyCors from '@fastify/cors';
 import '@/lib/typeorm/typeorm';
 
 // Imported routes
+import { authRoutes } from '@/http/controllers/auth/routes';
 import { postRoutes } from '@/http/controllers/post/routes';
 import { postLogRoutes } from '@/http/controllers/post-log/routes';
 import { roleRoutes } from '@/http/controllers/role/routes';
@@ -46,6 +47,7 @@ app.register(fastifySwaggerUI, {
 });
 
 // Registered routes
+app.register(authRoutes);
 app.register(postRoutes);
 app.register(postLogRoutes);
 app.register(roleRoutes);

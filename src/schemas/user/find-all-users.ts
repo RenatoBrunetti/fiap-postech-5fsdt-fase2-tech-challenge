@@ -13,6 +13,10 @@ export const findAllUsersSchema = {
           role_id: { type: 'string', format: 'uuid' },
           created_at: { type: 'string', format: 'date-time' },
           updated_at: { type: 'string', format: 'date-time' },
+          role: {
+            id: { type: 'string', format: 'uuid' },
+            name: { type: 'string' },
+          },
         },
       },
     },
