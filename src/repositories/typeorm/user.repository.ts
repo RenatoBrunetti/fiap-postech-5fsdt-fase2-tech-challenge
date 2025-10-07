@@ -14,14 +14,29 @@ export class UserRepository implements IUserRepository {
   }
 
   async findAll(): Promise<IUser[]> {
-    return this.repository.find({ where: { active: true } });
+    return this.repository.find({
+      where: { active: true },
+      relations: ['role'],
+      select: { role: { id: true, name: true } },
+    });
   }
 
   async findById(id: string): Promise<(IUser & { role: IRole }) | null> {
     return this.repository.findOne({
       where: { id, active: true },
       relations: ['role'],
-      select: { role: true },
+      select: { role: { id: true, name: true } },
+    });
+  }
+
+  async findByCredentials(
+    username: string,
+    password: string,
+  ): Promise<IUser | null> {
+    return this.repository.findOne({
+      where: { username, password, active: true },
+      relations: ['role'],
+      select: { role: { id: true, name: true } },
     });
   }
 
