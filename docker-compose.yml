@@ -79,3 +79,4 @@ volumes:
 networks:
   challenge:
     driver: bridge
+    name: challenge
