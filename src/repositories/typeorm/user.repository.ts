@@ -43,4 +43,12 @@ export class UserRepository implements IUserRepository {
   async create(user: IUser): Promise<IUser> {
     return this.repository.save(user);
   }
+
+  async update(user: IUser): Promise<IUser> {
+    return this.repository.save(user);
+  }
+
+  async delete(id: string): Promise<void> {
+    await this.repository.delete(id);
+  }
 }

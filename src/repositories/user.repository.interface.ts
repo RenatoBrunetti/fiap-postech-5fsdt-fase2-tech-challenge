@@ -6,4 +6,6 @@ export interface IUserRepository {
   findById(id: string): Promise<(IUser & { role: IRole }) | null>;
   findByCredentials(username: string, password: string): Promise<IUser | null>;
   create(user: IUser): Promise<IUser>;
+  update(user: IUser): Promise<IUser>;
+  delete(id: string): Promise<void>;
 }
